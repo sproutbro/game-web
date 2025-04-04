@@ -1,10 +1,9 @@
 import { requireUser } from '$lib/server/auth.js';
+import { findUserById } from '$lib/server/models/user.js';
 
 /** @type {import('./$types').PageServerLoad} */
-export function load({ locals }) {
+export async function load({ locals }) {
     requireUser(locals);
-
-    return {
-        user: locals.user
-    };
+    const user = await findUserById(locals.user.id);
+    return { user };
 }
