@@ -8,6 +8,7 @@
 		<h1>Game web</h1>
 		<div class="nav-links">
 			<a href="/">Home</a>
+			<a href="/notice">Notice</a>
 			<a href="/score">Score</a>
 			{#if data.user}
 				<a href="/auth/user">User</a>
