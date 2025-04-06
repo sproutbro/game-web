@@ -1,6 +1,5 @@
 <script>
     export let data;
-    console.log(data);
 </script>
 
 <div class="card">
@@ -12,7 +11,7 @@
             >📅{data.notice.created_at}</span
         >
     </small>
-    <div class="card-content">
+    <div class="post-content">
         <p>{data.notice.content}</p>
     </div>
 </div>

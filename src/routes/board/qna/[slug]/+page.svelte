@@ -11,7 +11,7 @@
             >📅{data.qna.created_at}</span
         >
     </small>
-    <div class="card-content">
+    <div class="post-content">
         <p>{data.qna.content}</p>
     </div>
 </div>

@@ -1,5 +1,18 @@
 import { db } from '$lib/server/db.js';
 
+export async function saveQnA({ user_id, title, content }) {
+    const result = await db.query(
+        `INSERT INTO 
+            qna (user_id, title, content) 
+        VALUES 
+            ($1, $2, $3)
+        RETURNING 
+            id`,
+        [user_id, title, content]
+    );
+    return result.rows[0].id;
+}
+
 export async function getQnAs(limit) {
     const result = await db.query(
         `SELECT
