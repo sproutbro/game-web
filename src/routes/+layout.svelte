@@ -7,7 +7,7 @@
 	<nav class="nav-main">
 		<h1 class="links"><a href="/">Game</a></h1>
 		<div class="links">
-			<a href="/notice">Notice</a>
+			<a href="/board">Board</a>
 			<a href="/score">Score</a>
 			{#if data.user}
 				<a href="/auth/user">User</a>

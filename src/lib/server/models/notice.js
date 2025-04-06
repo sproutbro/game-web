@@ -1,17 +1,22 @@
 import { db } from '$lib/server/db.js';
 
-export async function getNotices() {
+export async function getNotices(limit) {
     const result = await db.query(
         `SELECT
-            id,
-            user_id,
-            title,
-            content,
-            TO_CHAR (created_at, 'YYYY-MM-DD') as created_at
+            notices.id,
+            notices.title,
+            users.nickname,
+            TO_CHAR (notices.created_at, 'YYYY-MM-DD') as created_at
         FROM
             notices
+        JOIN
+            users
+        ON
+            notices.user_id = users.id
         ORDER BY 
-            id DESC`
+            id DESC
+        LIMIT $1`,
+        [limit]
     );
     return result.rows;
 }
@@ -19,15 +24,18 @@ export async function getNotices() {
 export async function findNoticeById(id) {
     const result = await db.query(
         `SELECT
-            id,
-            user_id,
-            title,
-            content,
-            TO_CHAR (created_at, 'YYYY-MM-DD') as created_at
+            notices.title,
+            notices.content,
+            users.nickname,
+            TO_CHAR (notices.created_at, 'YYYY-MM-DD') as created_at
         FROM
             notices
+        JOIN
+            users
+        ON
+            notices.user_id = users.id
         WHERE
-            id = $1`,
+            notices.id = $1`,
         [id]
     );
     return result.rows[0] ?? null;
