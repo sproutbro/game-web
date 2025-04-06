@@ -4,10 +4,9 @@
 </script>
 
 <header>
-	<nav>
-		<h1>Game web</h1>
-		<div class="nav-links">
-			<a href="/">Home</a>
+	<nav class="nav-main">
+		<h1 class="links"><a href="/">Game</a></h1>
+		<div class="links">
 			<a href="/notice">Notice</a>
 			<a href="/score">Score</a>
 			{#if data.user}

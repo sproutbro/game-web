@@ -16,7 +16,4 @@
     {:else}
         <p>No scores available.</p>
     {/if}
-    <div class="links">
-        <a href="/score/runner">more+</a>
-    </div>
 </div>
