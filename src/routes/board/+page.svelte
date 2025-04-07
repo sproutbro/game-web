@@ -7,15 +7,15 @@
     {#if data.notices.length > 0}
         <div class="card-content">
             {#each data.notices as notice}
-                <div class="post-card">
-                    <a href="/board/notice/{notice.id}"
-                        ><div>{notice.title}</div></a
-                    >
-                    <small>
-                        👤{notice.nickname}
-                        <span class="right"> 📅{notice.created_at}</span>
-                    </small>
-                </div>
+                <a href="/board/notice/{notice.id}">
+                    <div class="post-card">
+                        <div>{notice.title}</div>
+                        <small>
+                            👤{notice.nickname}
+                            <span class="right"> 📅{notice.created_at}</span>
+                        </small>
+                    </div>
+                </a>
             {/each}
         </div>
         <a href="/board/notice">more+</a>
@@ -29,13 +29,15 @@
     {#if data.qnas.length > 0}
         <div class="card-content">
             {#each data.qnas as qna}
-                <div class="post-card">
-                    <a href="/board/qna/{qna.id}"><div>{qna.title}</div></a>
-                    <small>
-                        👤{qna.nickname}
-                        <span class="right"> 📅{qna.created_at}</span>
-                    </small>
-                </div>
+                <a href="/board/qna/{qna.id}">
+                    <div class="post-card">
+                        <div>{qna.title}</div>
+                        <small>
+                            👤{qna.nickname}
+                            <span class="right"> 📅{qna.created_at}</span>
+                        </small>
+                    </div>
+                </a>
             {/each}
         </div>
         <a href="/board/qna">more+</a>

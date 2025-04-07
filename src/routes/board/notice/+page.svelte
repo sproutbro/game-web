@@ -7,15 +7,15 @@
     {#if data.notices.length > 0}
         <div class="card-content">
             {#each data.notices as notice}
-                <div class="post-card">
-                    <a href="/board/notice/{notice.id}"
-                        ><div>{notice.title}</div></a
-                    >
-                    <small>
-                        👤{notice.nickname}
-                        <span class="right"> 📅{notice.created_at}</span>
-                    </small>
-                </div>
+                <a href="/board/notice/{notice.id}">
+                    <div class="post-card">
+                        <div>{notice.title}</div>
+                        <small>
+                            👤{notice.nickname}
+                            <span class="right"> 📅{notice.created_at}</span>
+                        </small>
+                    </div>
+                </a>
             {/each}
         </div>
     {:else}
